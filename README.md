@@ -61,7 +61,7 @@ The required environment variables by the client app are:
   
 - `REACT_APP_FIREBASE_MEASUREMENT_ID`: Firebase measurement ID
   
-- `REACT_APP_WEBSOCKET_URL`: SUMU 
+- `REACT_APP_WEBSOCKET_URL`: SUMU Websocket URL
 
 ### Deploying
 
