@@ -196,21 +196,16 @@ function SumuProvider({children}: any) {
                         description: presence,
                         placement: "topRight"
                     });
-                    const newConnected = new Set(connectedUsers);
-                    newConnected.delete(m.user_id)
-                    setConnectedUsers(newConnected);
+                    setConnectedUsers((prev: any) => new Set([...prev].filter(user_id => user_id !== m.user_id)))
                 } else if (m.status === "ONLINE") {
                     notification.success({
                         message: "Presence",
                         description: presence,
                         placement: "topRight"
                     });
-                    const newConnected = new Set(connectedUsers).add(m.user_id)
-                    console.log(newConnected)
-                    setConnectedUsers(newConnected);
+                    console.log(connectedUsers)
+                    setConnectedUsers((prev: any) => new Set(prev.add(m.user_id)));
                 }
-
-
                 break;
             case "pong":
                 notification.warning({

@@ -58,7 +58,7 @@ function disconnect(raise = true): void {
 `
 
 let connect = `
-public connect(accessToken: string): void {
+function connect(accessToken: string): void {
     let endpoint = \`wss://live.kodhive.com/push?authorization=\${accessToken}\`;
     setConnecting(true);
     ws = new Sockette(endpoint, {
